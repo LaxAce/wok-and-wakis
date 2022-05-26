@@ -1,0 +1,19 @@
+li {
+  font-weight: 500;
+  font-size: 1.4rem;
+  padding: 8px 2px;
+}
+
+.active {
+  padding: 8px;
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+}
+
+@media screen and (min-width: 1140px) {
+  .active {
+    border: none;
+    border-radius: 0;
+    border-bottom: 3px solid var(--darkest);
+  }
+}

@@ -54,12 +54,21 @@ a {
   color: var(--dark-tint);
 }
 
-.btn {
+ul {
+  list-style: none;
+}
+
+.btn,
+li {
   cursor: pointer;
 }
 
 @media screen and (min-width: 540px) {
   p {
     font-size: 1.5rem;
+  }
+
+  section {
+    margin: 0 3.2rem;
   }
 }

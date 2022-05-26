@@ -16,7 +16,7 @@
   background-color: var(--white);
   padding: 1.8rem;
   min-width: 100%;
-  border-bottom: 1px solid var(--light-slate);
+  border-bottom: 1px solid var(--lightest-slate);
 }
 
 .hero h2 {
@@ -45,7 +45,7 @@
 
 @media screen and (min-width: 540px) {
   .hero {
-    height: 50rem;
+    height: 45rem;
   }
   .hero .hero-content {
     min-width: 45rem;

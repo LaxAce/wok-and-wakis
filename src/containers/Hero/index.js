@@ -13,7 +13,6 @@ const Hero = () => {
 
   const handleMenu = () => {
     setMini(!mini);
-    console.log(mini);
   };
 
   return (

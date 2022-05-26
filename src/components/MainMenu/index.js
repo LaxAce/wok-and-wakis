@@ -1,16 +1,33 @@
 import "./index.css";
+import { useState } from "react";
 import { BsClockFill } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import { HiShoppingCart } from "react-icons/hi";
 
 const MainMenu = ({ mini }) => {
+  const [active, setActive] = useState("pickup");
+
+  const handleActive = (state) => {
+    setActive(state);
+  };
+
   return (
     <div className={mini ? "main-menu mini" : "main-menu"}>
       <div className="cta">
-        <button type="button" className="btn delivery active">
+        <button
+          onClick={() => handleActive("delivery")}
+          type="button"
+          className={
+            active == "delivery" ? "btn delivery active" : "btn delivery"
+          }
+        >
           Delivery
         </button>
-        <button type="button" className="btn pickup ">
+        <button
+          onClick={() => handleActive("pickup")}
+          type="button"
+          className={active == "pickup" ? "btn pickup active" : "btn pickup"}
+        >
           Pickup
         </button>
       </div>

@@ -1,5 +1,5 @@
 import Hero from "./Hero";
-import Categories from "./Categories";
+import FoodMenu from "./FoodMenu";
 import Items from "./Items";
 
-export { Hero, Categories, Items };
+export { Hero, FoodMenu, Items };

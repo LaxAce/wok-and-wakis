@@ -31,13 +31,13 @@
   border-radius: 3rem;
   color: var(--darkest);
   background-color: var(--lightest-slate);
-  transition: all 3s;
 }
 
 .main-menu .pickup.active,
 .main-menu .delivery.active {
   color: var(--white);
   background-color: var(--darkest);
+  transition: all 0.3s;
 }
 
 .main-menu .interval {
