@@ -25,7 +25,7 @@ const Hero = () => {
         <p className="address">
           1322 Lazy Alley, Philadelphia, CA 30203, USA <a href="">More info</a>
         </p>
-        <p className="offers">
+        <p className="offers fade-para">
           Bakery - Breakfast &#38; Brunch - Cafe - Coffees
         </p>
         <p className="open-hours">Open Hours: 8:30AM - 7:00PM</p>

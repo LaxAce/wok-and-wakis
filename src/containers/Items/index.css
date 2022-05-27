@@ -1,0 +1,107 @@
+.items-section header {
+  margin-bottom: 2.4rem;
+}
+
+.items-section .section-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.items-section .sub-section {
+  margin-bottom: 4rem;
+}
+
+.items-section .fade-para {
+  color: var(--light-slate);
+  font-weight: 400;
+}
+
+.items-section h3 {
+  margin-bottom: 1rem;
+}
+
+.items-section .snippet {
+  font-size: 1.5rem;
+}
+.items-section .snippet,
+.items-section .cost {
+  font-weight: 400;
+}
+
+.items-section .item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.6rem;
+  row-gap: 1.8rem;
+}
+
+.items-section .item-list li {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 34rem;
+}
+
+.items-section .item-list .card-body {
+  height: 70%;
+  padding: 2rem 1.6rem;
+  border: 1px solid var(--lightest-slate);
+  border-top: none;
+  border-radius: var(--radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.items-section .item-list .card-img {
+  height: 30%;
+}
+
+.items-section .item-list img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .items-section .item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.6rem;
+    row-gap: 1.8rem;
+  }
+
+  .items-section .item-list li {
+    display: flex;
+    height: 16rem;
+  }
+
+  .items-section .item-list .card-body {
+    padding: 2rem 1.6rem;
+    width: 70%;
+    border: 1px solid var(--lightest-slate);
+    border-right: none;
+    border-radius: var(--radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .items-section .item-list .card-img {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .items-section .item-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} ;

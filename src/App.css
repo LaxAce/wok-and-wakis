@@ -56,11 +56,17 @@ a {
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .btn,
 li {
   cursor: pointer;
+}
+
+section {
+  margin: 0 2.8rem;
+  padding: 4rem 0;
 }
 
 @media screen and (min-width: 540px) {
@@ -70,5 +76,6 @@ li {
 
   section {
     margin: 0 3.2rem;
+    padding-top: 5.2rem;
   }
 }

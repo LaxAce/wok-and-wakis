@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 0;
   border-bottom: 1px solid var(--lightest-slate);
 }
 
@@ -42,7 +41,6 @@
 
 @media screen and (min-width: 1140px) {
   .food-menu {
-    padding-top: 5.2rem;
     padding-bottom: 0;
   }
   .food-menu .menu-list {

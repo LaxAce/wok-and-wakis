@@ -30,11 +30,6 @@
   margin-bottom: 1rem;
 }
 
-.hero .offers {
-  color: var(--light-slate);
-  font-weight: 400;
-}
-
 .hero .open-hours::after {
   content: "Open";
   margin-left: 1rem;
