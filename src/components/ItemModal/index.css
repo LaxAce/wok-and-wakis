@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  z-index: 9;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -17,9 +17,9 @@
   margin: 2.6rem auto;
   border-radius: 1.2rem;
   overflow: auto;
-  /* -ms-overflow-style: none;
-  scrollbar-width: none; */
-  /* position: relative; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative;
 }
 
 .modal .modal-content::-webkit-scrollbar {

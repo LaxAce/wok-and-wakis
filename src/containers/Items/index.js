@@ -18,7 +18,7 @@ const Items = () => {
   const [sectionThree, setSectionThree] = useState(false);
 
   const handleClickItem = (id) => {
-    const currentItem = foodItems.find((item) => item.id == id);
+    const currentItem = foodItems.find((item) => item.id === id);
     if (currentItem) {
       setActiveItem(currentItem);
       setShowModal(true);
