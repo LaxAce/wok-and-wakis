@@ -37,7 +37,6 @@
 .main-menu .delivery.active {
   color: var(--white);
   background-color: var(--darkest);
-  transition: all 0.3s;
 }
 
 .main-menu .interval {

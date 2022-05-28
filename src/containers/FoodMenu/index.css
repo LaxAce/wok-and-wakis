@@ -13,6 +13,7 @@
 .food-menu .line-bar {
   display: none;
   margin-bottom: 8px;
+  margin-right: 1.2rem;
   color: var(--darkest);
 }
 

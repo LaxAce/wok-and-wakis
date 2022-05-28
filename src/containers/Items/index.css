@@ -79,10 +79,13 @@
 
   .items-section .item-list li {
     display: flex;
+    flex-direction: row;
     height: 16rem;
   }
 
   .items-section .item-list .card-body {
+    height: auto;
+    flex: 1;
     padding: 2rem 1.6rem;
     width: 70%;
     border: 1px solid var(--lightest-slate);
@@ -97,6 +100,17 @@
 
   .items-section .item-list .card-img {
     width: 30%;
+    height: auto;
+    flex: 1;
+  }
+
+  .items-section .item-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 

@@ -1,5 +1,5 @@
 import "./App.css";
-import { Hero, FoodMenu, Items } from "./containers";
+import { Hero, FoodMenu, Items, Footer } from "./containers";
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <Hero />
       <FoodMenu />
       <Items />
+      <Footer />
     </div>
   );
 }
