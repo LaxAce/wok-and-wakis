@@ -3,14 +3,17 @@ import { useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 
-const ItemModal = ({ activeItem, showModal, closeModal }) => {
-  const [sectionOne, setSectionOne] = useState(false);
-  const [sectionTwo, setSectionTwo] = useState(false);
-  const [sectionThree, setSectionThree] = useState(false);
-
-  const handleSectionOne = () => setSectionOne(!sectionOne);
-  const handleSectionTwo = () => setSectionTwo(!sectionTwo);
-  const handleSectionThree = () => setSectionThree(!sectionThree);
+const ItemModal = ({
+  activeItem,
+  showModal,
+  closeModal,
+  sectionOne,
+  sectionTwo,
+  sectionThree,
+  handleSectionOne,
+  handleSectionTwo,
+  handleSectionThree,
+}) => {
   return (
     <div
       onClick={closeModal}
@@ -194,7 +197,7 @@ const ItemModal = ({ activeItem, showModal, closeModal }) => {
             <div className="counter">1</div>
             <button className="btn increment">+</button>
           </div>
-          <button className="btn cta">
+          <button className="btn cta" onClick={closeModal}>
             Add to cart - <span>$12.55</span>
           </button>
         </div>

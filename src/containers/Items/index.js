@@ -13,6 +13,9 @@ import foodItems from "../../provider/food-items";
 const Items = () => {
   const [activeItem, setActiveItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [sectionOne, setSectionOne] = useState(false);
+  const [sectionTwo, setSectionTwo] = useState(false);
+  const [sectionThree, setSectionThree] = useState(false);
 
   const handleClickItem = (id) => {
     const currentItem = foodItems.find((item) => item.id == id);
@@ -25,7 +28,14 @@ const Items = () => {
   const closeModal = () => {
     setShowModal(false);
     setActiveItem(null);
+    setSectionOne(false);
+    setSectionTwo(false);
+    setSectionThree(false);
   };
+
+  const handleSectionOne = () => setSectionOne(!sectionOne);
+  const handleSectionTwo = () => setSectionTwo(!sectionTwo);
+  const handleSectionThree = () => setSectionThree(!sectionThree);
 
   return (
     <section className="items-section">
@@ -39,6 +49,12 @@ const Items = () => {
         showModal={showModal}
         closeModal={closeModal}
         activeItem={activeItem}
+        sectionOne={sectionOne}
+        sectionTwo={sectionTwo}
+        sectionThree={sectionThree}
+        handleSectionOne={handleSectionOne}
+        handleSectionTwo={handleSectionTwo}
+        handleSectionThree={handleSectionThree}
       />
     </section>
   );
