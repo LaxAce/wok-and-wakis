@@ -22,7 +22,7 @@ const ItemModal = ({
       }
     >
       <div onClick={(e) => e.stopPropagation()} className="modal-content">
-        <div className="modal-header">
+        {/* <div className="modal-header">
           <RiCloseLine className="btn btn-close" onClick={closeModal} />
           <h1>{activeItem?.name}</h1>
         </div>
@@ -200,7 +200,7 @@ const ItemModal = ({
           <button className="btn cta" onClick={closeModal}>
             Add to cart - <span>$12.55</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
