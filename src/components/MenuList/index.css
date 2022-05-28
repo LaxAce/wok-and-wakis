@@ -12,6 +12,7 @@ li.active {
 
 @media screen and (min-width: 1140px) {
   li.active {
+    padding: auto 0;
     border: none;
     border-radius: 0;
     border-bottom: 3px solid var(--darkest);

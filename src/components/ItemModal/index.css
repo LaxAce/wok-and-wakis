@@ -36,6 +36,7 @@
   border-top-right-radius: 1.2rem;
   background-color: var(--white);
   z-index: 4;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .modal .btn-close {
@@ -243,7 +244,7 @@ input[type="checkbox"] {
   width: 4rem;
   padding: 6px;
   border-radius: 50%;
-  color: var(--white);
+  color: var(--darkest);
   background-color: var(--green);
 }
 

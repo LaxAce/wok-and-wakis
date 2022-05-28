@@ -35,7 +35,7 @@
   margin-left: 1rem;
   padding: 4px 6px;
   border-radius: 5px;
-  background-color: var(--green);
+  background-color: var(--light-green);
 }
 
 @media screen and (min-width: 540px) {
