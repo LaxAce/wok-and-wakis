@@ -19,7 +19,7 @@ const Hero = () => {
     <div className="hero">
       <Navbar handleMenu={handleMenu} mini={mini} />
       {mini ? <MainMenu mini={mini} /> : null}
-      <img src={hero} className="hero-img" alt="meat and salad with onions" />
+      {/* <img src={hero} className="hero-img" alt="meat and salad with onions" /> */}
       <div className="hero-content">
         <h2>Kings family restaurant - Butler</h2>
         <p className="address">
