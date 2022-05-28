@@ -39,12 +39,6 @@ const Items = () => {
 
   return (
     <section className="items-section">
-      <PopularItems foodItems={foodItems} handleClickItem={handleClickItem} />
-      <WindsAndTenders
-        foodItems={foodItems}
-        handleClickItem={handleClickItem}
-      />
-      <PartyTrays foodItems={foodItems} handleClickItem={handleClickItem} />
       <ItemModal
         showModal={showModal}
         closeModal={closeModal}
@@ -56,6 +50,12 @@ const Items = () => {
         handleSectionTwo={handleSectionTwo}
         handleSectionThree={handleSectionThree}
       />
+      <PopularItems foodItems={foodItems} handleClickItem={handleClickItem} />
+      <WindsAndTenders
+        foodItems={foodItems}
+        handleClickItem={handleClickItem}
+      />
+      <PartyTrays foodItems={foodItems} handleClickItem={handleClickItem} />
     </section>
   );
 };
