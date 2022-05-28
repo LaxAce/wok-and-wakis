@@ -39,19 +39,12 @@ const Items = () => {
 
   return (
     <section className="items-section">
-      {!showModal && (
-        <>
-          <PopularItems
-            foodItems={foodItems}
-            handleClickItem={handleClickItem}
-          />
-          <WindsAndTenders
-            foodItems={foodItems}
-            handleClickItem={handleClickItem}
-          />
-          <PartyTrays foodItems={foodItems} handleClickItem={handleClickItem} />
-        </>
-      )}
+      <PopularItems foodItems={foodItems} handleClickItem={handleClickItem} />
+      <WindsAndTenders
+        foodItems={foodItems}
+        handleClickItem={handleClickItem}
+      />
+      <PartyTrays foodItems={foodItems} handleClickItem={handleClickItem} />
       <ItemModal
         showModal={showModal}
         closeModal={closeModal}
