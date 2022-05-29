@@ -1,6 +1,7 @@
 import "./index.css";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
+import { Checkbox } from "pretty-checkbox-react";
 
 const ItemModal = ({
   activeItem,
@@ -153,6 +154,9 @@ const ItemModal = ({
                 </div>
                 <span>+$2.50</span>
               </div>
+              <Checkbox shape="curve" variant="thick">
+                Curved Thick
+              </Checkbox>
             </div>
           )}
           <div className="control">
