@@ -163,6 +163,11 @@
   color: var(--light-slate);
 }
 
+.modal input,
+.modal label {
+  cursor: pointer;
+}
+
 input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;

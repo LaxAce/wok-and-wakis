@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Inter:wght@400;500;700&family=Nunito+Sans:wght@100;200;300;400;600;800&family=Outfit:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Overpass");
 
 * {
   border: 0;
@@ -9,6 +11,7 @@
 
 :root {
   --font-roboto: "Roboto", sans-serif;
+  --font-overpress: "Overpass", sans-serif;
 
   --darkest: #000;
   --dark: #111;
@@ -27,7 +30,7 @@ html {
 }
 
 body {
-  font-family: var(--font-roboto);
+  font-family: var(--font-overpress);
   color: var(--dark-tint);
 }
 
