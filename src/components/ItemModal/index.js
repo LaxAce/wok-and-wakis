@@ -2,17 +2,30 @@ import "./index.css";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 
+// Context
+import { useCartContext } from "../../context";
+
 const ItemModal = ({
   activeItem,
   showModal,
   closeModal,
   sectionOne,
   sectionTwo,
+  quantity,
   sectionThree,
+  handleIncrease,
+  handleDecrease,
   handleSectionOne,
   handleSectionTwo,
   handleSectionThree,
 }) => {
+  const { cart, setCart } = useCartContext();
+
+  const handleAddCart = () => {
+    setCart(cart + quantity);
+    closeModal();
+  };
+
   return (
     <div
       onClick={closeModal}
@@ -190,11 +203,15 @@ const ItemModal = ({
         </div>
         <div className="modal-footer">
           <div className="footer-left">
-            <button className="btn subtract">&mdash;</button>
-            <div className="counter">1</div>
-            <button className="btn increment">+</button>
+            <button className="btn subtract" onClick={handleDecrease}>
+              &mdash;
+            </button>
+            <div className="counter">{quantity}</div>
+            <button className="btn increment" onClick={handleIncrease}>
+              +
+            </button>
           </div>
-          <button className="btn cta" onClick={closeModal}>
+          <button className="btn cta" onClick={handleAddCart}>
             Add to cart - <span>$12.55</span>
           </button>
         </div>

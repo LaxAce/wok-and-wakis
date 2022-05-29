@@ -12,9 +12,9 @@ const Navbar = ({ handleMenu, mini }) => {
       <MainMenu />
       <div className="toggle-menu ">
         {mini ? (
-          <AiOutlineClose onClick={handleMenu} size={22} />
+          <AiOutlineClose className="btn" onClick={handleMenu} size={22} />
         ) : (
-          <GiHamburgerMenu onClick={handleMenu} size={22} />
+          <GiHamburgerMenu className="btn" onClick={handleMenu} size={22} />
         )}
       </div>
     </nav>

@@ -16,6 +16,7 @@ const Items = () => {
   const [sectionOne, setSectionOne] = useState(false);
   const [sectionTwo, setSectionTwo] = useState(false);
   const [sectionThree, setSectionThree] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const handleClickItem = (id) => {
     const currentItem = foodItems.find((item) => item.id === id);
@@ -31,11 +32,20 @@ const Items = () => {
     setSectionOne(false);
     setSectionTwo(false);
     setSectionThree(false);
+    setQuantity(1);
   };
 
   const handleSectionOne = () => setSectionOne(!sectionOne);
   const handleSectionTwo = () => setSectionTwo(!sectionTwo);
   const handleSectionThree = () => setSectionThree(!sectionThree);
+
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDecrease = () => {
+    if (quantity > 0) setQuantity(quantity - 1);
+  };
 
   return (
     <section className="items-section">
@@ -51,7 +61,10 @@ const Items = () => {
         activeItem={activeItem}
         sectionOne={sectionOne}
         sectionTwo={sectionTwo}
+        quantity={quantity}
         sectionThree={sectionThree}
+        handleIncrease={handleIncrease}
+        handleDecrease={handleDecrease}
         handleSectionOne={handleSectionOne}
         handleSectionTwo={handleSectionTwo}
         handleSectionThree={handleSectionThree}

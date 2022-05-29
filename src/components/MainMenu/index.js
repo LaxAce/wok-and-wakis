@@ -4,8 +4,12 @@ import { BsClockFill } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import { HiShoppingCart } from "react-icons/hi";
 
+// Context
+import { useCartContext } from "../../context";
+
 const MainMenu = ({ mini }) => {
   const [active, setActive] = useState("pickup");
+  const { cart } = useCartContext();
 
   const handleActive = (state) => {
     setActive(state);
@@ -38,7 +42,7 @@ const MainMenu = ({ mini }) => {
       </div>
       <button className="btn cart">
         <HiShoppingCart size={22} />
-        <span>3</span>
+        <span>{cart}</span>
       </button>
     </div>
   );
