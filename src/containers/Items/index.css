@@ -45,12 +45,17 @@
   height: 34rem;
   padding: 0;
   border-radius: var(--radius);
+  border: 1px solid var(--lightest-slate);
+  transition: all 0.3s;
+}
+
+.items-section .item-list li:hover {
+  border: 1px solid var(--light-green);
 }
 
 .items-section .item-list .card-body {
-  height: 70%;
+  height: 65%;
   padding: 2rem 1.6rem;
-  border: 1px solid var(--lightest-slate);
   border-top: none;
   border-radius: var(--radius);
   border-top-left-radius: 0;
@@ -68,7 +73,7 @@
 }
 
 .items-section .item-list .card-img {
-  height: 30%;
+  height: 35%;
 }
 
 .items-section .item-list img {
@@ -109,7 +114,6 @@
     flex: 1;
     padding: 2rem 1.6rem;
     width: 70%;
-    border: 1px solid var(--lightest-slate);
     border-right: none;
     border-radius: var(--radius);
     border-top-right-radius: 0;
