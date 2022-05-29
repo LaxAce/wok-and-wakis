@@ -2,8 +2,8 @@ import "./index.css";
 import { useState } from "react";
 
 // Components
-import Navbar from "../../components/Navbar";
 import MainMenu from "../../components/MainMenu";
+import Navbar from "../../components/Navbar";
 
 // Image
 import hero from "../../assets/lily.jpg";

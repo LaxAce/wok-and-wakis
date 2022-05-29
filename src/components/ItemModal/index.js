@@ -1,5 +1,4 @@
 import "./index.css";
-import { useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 
