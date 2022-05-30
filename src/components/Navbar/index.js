@@ -10,7 +10,7 @@ const Navbar = ({ handleMenu, mini }) => {
     <nav className="nav">
       <div className="logo">wok &#38; wakis</div>
       <MainMenu />
-      <div className="toggle-menu ">
+      <div className="toggle-menu">
         {mini ? (
           <AiOutlineClose className="btn" onClick={handleMenu} size={22} />
         ) : (
