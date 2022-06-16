@@ -44,7 +44,7 @@ const Items = () => {
   };
 
   const handleDecrease = () => {
-    if (quantity > 0) setQuantity(quantity - 1);
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
   return (

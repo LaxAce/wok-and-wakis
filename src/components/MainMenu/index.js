@@ -9,7 +9,7 @@ import { useCartContext } from "../../context";
 
 const MainMenu = ({ mini }) => {
   const [active, setActive] = useState("pickup");
-  const { cart } = useCartContext();
+  const { cart, handleShowCart } = useCartContext();
 
   const handleActive = (state) => {
     setActive(state);
@@ -40,9 +40,9 @@ const MainMenu = ({ mini }) => {
         <p>ASAP - Ready in 25 - 40 mins</p>
         <RiEditBoxLine size={18} />
       </div>
-      <button className="btn cart">
+      <button onClick={handleShowCart} className="btn cart">
         <HiShoppingCart size={22} />
-        <span>{cart}</span>
+        <span>{cart.length}</span>
       </button>
     </div>
   );

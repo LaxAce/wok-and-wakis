@@ -14,7 +14,8 @@ const FoodMenu = () => {
 
   const handleSelect = (id) => setActive(id);
 
-  const activeMenu = foodMenu.find((menu, i) => i == active);
+  // const activeMenu = foodMenu.find((menu, i) => i == active);
+  const activeMenu = foodMenu[active]
 
   return (
     <section className="food-menu">

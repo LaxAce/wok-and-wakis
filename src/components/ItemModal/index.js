@@ -1,4 +1,5 @@
 import "./index.css";
+import { useEffect, useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 
@@ -19,12 +20,18 @@ const ItemModal = ({
   handleSectionTwo,
   handleSectionThree,
 }) => {
-  const { cart, setCart } = useCartContext();
+  const { cart, addToCart } = useCartContext();
+  const [cost, setCost] = useState(0);
 
   const handleAddCart = () => {
-    setCart(cart + quantity);
+    addToCart({...activeItem, quantity, cost});
     closeModal();
   };
+
+  useEffect(() => {
+    const roundedCost = Math.round(activeItem?.cost * quantity * 100) / 100
+    setCost(roundedCost)
+  }, [activeItem, quantity])
 
   return (
     <div
@@ -212,7 +219,7 @@ const ItemModal = ({
             </button>
           </div>
           <button className="btn cta" onClick={handleAddCart}>
-            Add to cart - <span>$12.55</span>
+            Add to cart - <span>${cost}</span>
           </button>
         </div>
       </div>

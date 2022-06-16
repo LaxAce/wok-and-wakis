@@ -16,9 +16,11 @@
   --darkest: #000;
   --dark: #111;
   --dark-tint: #222;
+  --dark-tint: #102A43;
   --white: #fff;
   --light-green: #acfce9;
-  --green: #29d9b0;
+  /* --green: #29d9b0; */
+  --green: #08E9E1;
   --light-slate: #aaa;
   --lightest-slate: rgba(221, 221, 221, 0.492);
   --radius: 6px;

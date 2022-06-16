@@ -1,0 +1,27 @@
+.cart-item-page {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2rem;
+    border-bottom: 1px solid var(--lightest-slate);
+    margin-top: 2rem;
+}
+
+.cart-item-page .quantity div {
+    min-width: 6.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .4rem;
+    font-size: 1.6rem;
+    background-color: var(--lightest-slate);
+    background-color: #F0F4F8;
+    border-radius: 4px;
+    max-width: 20%;
+}
+
+.cart-item-page .quantity button {
+    background-color: inherit;
+    margin-top: 1rem;
+    color: #EF4E4E;
+    font-weight: 500;
+}

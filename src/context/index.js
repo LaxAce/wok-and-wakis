@@ -9,13 +9,38 @@ export const useCartContext = () => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [cart, updateCart] = useState(3);
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
-  const setCart = (cart) => {
-    updateCart(cart);
+  const handleShowCart = () => setShowCart(!showCart);
+
+  const addToCart = (newItem) => {
+    setCart((prevItem) => {
+      const existingItem = prevItem.find(item => item.id == newItem.id);
+
+      if (existingItem) {
+        const itemList = [];
+
+        prevItem.map(item => {
+          if (item.id == existingItem.id) {
+            const updatedItem = {...item, quantity: newItem.quantity, cost: newItem.cost}
+
+            itemList.push(updatedItem)
+          } else itemList.push(item)
+          
+        })
+
+        return itemList
+      } else return [...prevItem, newItem]
+    });
   };
 
-  const contexts = { cart, setCart };
+  const removeFromCart = (id) => {
+    const currentItems = cart.filter(item => item.id != id)
+    setCart(currentItems)
+  } 
+
+  const contexts = { cart, addToCart, showCart, handleShowCart , removeFromCart};
 
   return (
     <CartContext.Provider value={contexts}>{children}</CartContext.Provider>
