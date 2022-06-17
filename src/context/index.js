@@ -19,22 +19,12 @@ export const CartProvider = ({ children }) => {
       const existingItem = prevItem.find((item) => item.id == newItem.id);
 
       if (existingItem) {
-        const itemList = [];
+        const filterList = prevItem.filter(
+          (item) => item.id != existingItem.id
+        );
+        const updatePrevItems = [...filterList, newItem];
 
-        prevItem.map((item) => {
-          if (item.id == existingItem.id) {
-            const updatedItem = {
-              ...item,
-              quantity: newItem.quantity,
-              cost: newItem.cost,
-              addOns: newItem.addOns,
-            };
-
-            itemList.push(updatedItem);
-          } else itemList.push(item);
-        });
-
-        return itemList;
+        return updatePrevItems;
       } else return [...prevItem, newItem];
     });
   };
@@ -44,12 +34,18 @@ export const CartProvider = ({ children }) => {
     setCart(currentItems);
   };
 
+  const checkOut = () => {
+    setCart([]);
+    handleShowCart();
+  };
+
   const contexts = {
     cart,
     addToCart,
     showCart,
     handleShowCart,
     removeFromCart,
+    checkOut,
   };
 
   return (

@@ -34,7 +34,8 @@
     gap: 0; */
 }
 
-.cart-item-page li {
+.cart-item-page li,
+.cart-item-page .item-body p {
     font-size: 1rem;
     font-weight: 400;
 }

@@ -9,7 +9,7 @@ import CartItem from "../CartItem";
 import { useCartContext } from "../../context";
 
 const Cart = () => {
-  const { cart, handleShowCart } = useCartContext();
+  const { cart, handleShowCart, checkOut } = useCartContext();
   let totalCost = 0;
 
   cart.map((item) => {
@@ -41,7 +41,7 @@ const Cart = () => {
 
             <ul className="order-list">
               {cart.map((item) => {
-                const { id, quantity, name, addOns, cost } = item;
+                const { id, quantity, name, addOns, cost, cheese } = item;
 
                 return (
                   <CartItem
@@ -51,6 +51,7 @@ const Cart = () => {
                     name={name}
                     addOns={addOns}
                     cost={cost}
+                    cheese={cheese}
                   />
                 );
               })}
@@ -61,7 +62,7 @@ const Cart = () => {
         )}
 
         {cart.length > 0 && <div className="modal-footer">
-          <button>
+          <button onClick={checkOut}>
             <span>Checkout</span> <span>${Math.round(totalCost * 100) / 100}</span>{" "}
           </button>
         </div>}

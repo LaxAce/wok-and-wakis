@@ -4,7 +4,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 // context
 import { useCartContext } from "../../context";
 
-const CartItem = ({id, quantity, name, addOns, cost}) => {
+const CartItem = ({id, quantity, name, addOns, cost, cheese}) => {
   const {removeFromCart} = useCartContext()
   return (
     <li className="cart-item-page" key={id}>
@@ -20,6 +20,7 @@ const CartItem = ({id, quantity, name, addOns, cost}) => {
           <li key={i}>{item}, </li>
         ))}
         </ul>
+        <p>{cheese}</p>
       </div>
       <h3>${cost}</h3>
     </li>

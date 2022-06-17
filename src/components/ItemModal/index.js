@@ -28,6 +28,7 @@ const ItemModal = ({
     "add-pepper-jack": false,
     "add-provolone": false,
   });
+  const [cheese, SetCheese] = useState('Scrambled')
 
   const handleAddCart = () => {
     const addOns = []
@@ -40,7 +41,7 @@ const ItemModal = ({
         addOns.push(splitted)
       }
     })
-    addToCart({...activeItem, quantity, cost, addOns});
+    addToCart({...activeItem, quantity, cost, addOns, cheese });
     closeModal();
     setCheckData({
       "add-cheddar": false,
@@ -58,6 +59,10 @@ const ItemModal = ({
   const handleCheckbox = (e) => {
      setCheckData({ ...checkData, [e.target.value]: e.target.checked });
   };
+
+  const handleRadio = (e) => {
+    SetCheese(e.target.value)
+  }
 
   return (
     <div
@@ -101,7 +106,8 @@ const ItemModal = ({
                   type="radio"
                   id="over-easy"
                   name="egg"
-                  value="over-easy"
+                  value="Over Easy"
+                  onClick={handleRadio}
                 />
                 <label htmlFor="over-easy">Over Easy</label>
               </div>
@@ -110,7 +116,8 @@ const ItemModal = ({
                   type="radio"
                   id="over-hard"
                   name="egg"
-                  value="over-hard"
+                  value="Over Hard"
+                  onClick={handleRadio}
                 />
                 <label htmlFor="over-hard">Over Hard</label>
               </div>
@@ -119,7 +126,8 @@ const ItemModal = ({
                   type="radio"
                   id="over-medium"
                   name="egg"
-                  value="over-medium"
+                  value="Over Medium"
+                  onClick={handleRadio}
                 />
                 <label htmlFor="over-medium">Over Medium</label>
               </div>
@@ -128,8 +136,9 @@ const ItemModal = ({
                   type="radio"
                   id="scrambled"
                   name="egg"
-                  value="scrambled"
+                  value="Scrambled"
                   defaultChecked
+                  onClick={handleRadio}
                 />
                 <label htmlFor="scrambled">Scrambled</label>
               </div>
