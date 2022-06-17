@@ -24,4 +24,27 @@
     margin-top: 1rem;
     color: #EF4E4E;
     font-weight: 500;
+    cursor: pointer;
+}
+
+.cart-item-page ul  {
+    width: 35rem;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    gap: 0; */
+}
+
+.cart-item-page li {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 640px) {
+    /* .cart-item-page {
+        column-gap: 0;
+    }
+    .cart-item-page ul  {
+        width: 10%;
+        flex: 1;
+    } */
 }

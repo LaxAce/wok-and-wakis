@@ -16,31 +16,41 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (newItem) => {
     setCart((prevItem) => {
-      const existingItem = prevItem.find(item => item.id == newItem.id);
+      const existingItem = prevItem.find((item) => item.id == newItem.id);
 
       if (existingItem) {
         const itemList = [];
 
-        prevItem.map(item => {
+        prevItem.map((item) => {
           if (item.id == existingItem.id) {
-            const updatedItem = {...item, quantity: newItem.quantity, cost: newItem.cost}
+            const updatedItem = {
+              ...item,
+              quantity: newItem.quantity,
+              cost: newItem.cost,
+              addOns: newItem.addOns,
+            };
 
-            itemList.push(updatedItem)
-          } else itemList.push(item)
-          
-        })
+            itemList.push(updatedItem);
+          } else itemList.push(item);
+        });
 
-        return itemList
-      } else return [...prevItem, newItem]
+        return itemList;
+      } else return [...prevItem, newItem];
     });
   };
 
   const removeFromCart = (id) => {
-    const currentItems = cart.filter(item => item.id != id)
-    setCart(currentItems)
-  } 
+    const currentItems = cart.filter((item) => item.id != id);
+    setCart(currentItems);
+  };
 
-  const contexts = { cart, addToCart, showCart, handleShowCart , removeFromCart};
+  const contexts = {
+    cart,
+    addToCart,
+    showCart,
+    handleShowCart,
+    removeFromCart,
+  };
 
   return (
     <CartContext.Provider value={contexts}>{children}</CartContext.Provider>

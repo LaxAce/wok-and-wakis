@@ -41,7 +41,7 @@ const Cart = () => {
 
             <ul className="order-list">
               {cart.map((item) => {
-                const { id, quantity, name, description, cost } = item;
+                const { id, quantity, name, addOns, cost } = item;
 
                 return (
                   <CartItem
@@ -49,7 +49,7 @@ const Cart = () => {
                     id={id}
                     quantity={quantity}
                     name={name}
-                    description={description}
+                    addOns={addOns}
                     cost={cost}
                   />
                 );

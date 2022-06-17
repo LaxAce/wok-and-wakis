@@ -20,18 +20,44 @@ const ItemModal = ({
   handleSectionTwo,
   handleSectionThree,
 }) => {
-  const { cart, addToCart } = useCartContext();
+  const { addToCart } = useCartContext();
   const [cost, setCost] = useState(0);
+  const [checkData, setCheckData] = useState({
+    "add-cheddar": false,
+    "add-swiss": true,
+    "add-pepper-jack": false,
+    "add-provolone": false,
+  });
 
   const handleAddCart = () => {
-    addToCart({...activeItem, quantity, cost});
+    const addOns = []
+    const asArray = Object.entries(checkData);
+
+    asArray.map(([key, value]) => {
+      if (value) {
+        const toUppercase = key[0].toUpperCase() + key.substring(1)
+        const splitted = toUppercase.split('-').join(' ')
+        addOns.push(splitted)
+      }
+    })
+    addToCart({...activeItem, quantity, cost, addOns});
     closeModal();
+    setCheckData({
+      "add-cheddar": false,
+      "add-swiss": true,
+      "add-pepper-jack": false,
+      "add-provolone": false,
+    })
   };
 
   useEffect(() => {
     const roundedCost = Math.round(activeItem?.cost * quantity * 100) / 100
     setCost(roundedCost)
   }, [activeItem, quantity])
+
+  const handleCheckbox = (e) => {
+     setCheckData({ ...checkData, [e.target.value]: e.target.checked });
+  };
 
   return (
     <div
@@ -123,58 +149,62 @@ const ItemModal = ({
             </button>
           </div>
           {sectionTwo && (
-            <div className="form body-content">
-              <div className="input-deco check">
-                <div>
-                  <input
-                    type="checkbox"
-                    id="add-cheddar"
-                    name="cheese"
-                    value="add-cheddar"
-                  />
-                  <label htmlFor="add-cheddar">Add Cheddar</label>
-                </div>
-                <span>+$2.50</span>
-              </div>
-              <div className="input-deco check">
-                <div>
-                  <input
-                    type="checkbox"
-                    id="add-pepper-jack"
-                    name="cheese"
-                    value="add-pepper-jack"
-                  />
-                  <label htmlFor="add-pepper-jack">Add Pepper Jack</label>
-                </div>
-                <span>+$2.50</span>
-              </div>
-              <div className="input-deco check">
-                <div>
-                  <input
-                    type="checkbox"
-                    id="add-provolone"
-                    name="cheese"
-                    value="add-provolone"
-                  />
-                  <label htmlFor="add-provolone">Add Provolone</label>
-                </div>
-                <span>+$2.50</span>
-              </div>
-              <div className="input-deco check">
-                <div>
-                  <input
-                    type="checkbox"
-                    id="add-swiss"
-                    name="cheese"
-                    value="add-swiss"
-                    defaultChecked
-                  />
-                  <label htmlFor="add-swiss">Add Swiss</label>
-                </div>
-                <span>+$2.50</span>
-              </div>
-            </div>
-          )}
+           <div className="form body-content">
+             <div className="input-deco check">
+               <div>
+                 <input
+                   type="checkbox"
+                   id="add-cheddar"
+                   name="cheese"
+                   value="add-cheddar"
+                   onChange={handleCheckbox}
+                 />
+                 <label htmlFor="add-cheddar">Add Cheddar</label>
+               </div>
+               <span className={checkData["add-cheddar"] ? "active" : 'not-active'}>+$2.50</span>
+             </div>
+             <div className="input-deco check">
+               <div>
+                 <input
+                   type="checkbox"
+                   id="add-pepper-jack"
+                   name="cheese"
+                   value="add-pepper-jack"
+                   onChange={handleCheckbox}
+                 />
+                 <label htmlFor="add-pepper-jack">Add Pepper Jack</label>
+               </div>
+               <span className={checkData["add-pepper-jack"] ? "active" : 'not-active'}>+$1.50</span>
+             </div>
+             <div className="input-deco check">
+               <div>
+                 <input
+                   type="checkbox"
+                   id="add-provolone"
+                   name="cheese"
+                   value="add-provolone"
+                   onChange={handleCheckbox}
+                 />
+                 <label htmlFor="add-provolone">Add Provolone</label>
+               </div>
+               <span className={checkData["add-provolone"] ? "active" : 'not-active'}>+$5.00</span>
+             </div>
+             <div className="input-deco check">
+               <div>
+                 <input
+                   type="checkbox"
+                   id="add-swiss"
+                   name="cheese"
+                   value="add-swiss"
+                   defaultChecked
+                   onChange={handleCheckbox}
+                 />
+                 <label htmlFor="add-swiss">Add Swiss</label>
+               </div>
+               <span className={checkData["add-swiss"] ? "active" : 'not-active'}>+$3.00</span>
+             </div>
+           </div>
+         )}
           <div className="control">
             <div>
               <h3>Special instructions</h3>

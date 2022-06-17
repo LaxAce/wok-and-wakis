@@ -158,6 +158,10 @@
   align-items: center;
 }
 
+.modal .check span.active {
+  color: var(--green);
+}
+
 .modal .check span {
   font-weight: 400;
   color: var(--light-slate);
