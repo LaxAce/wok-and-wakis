@@ -9,12 +9,7 @@ import CartItem from "../CartItem";
 import { useCartContext } from "../../context";
 
 const Cart = () => {
-  const { cart, handleShowCart, checkOut } = useCartContext();
-  let totalCost = 0;
-
-  cart.map((item) => {
-    (totalCost += item.cost)
-  });
+  const { cart, handleShowCart, checkOut, totalCost } = useCartContext();
 
   return (
     <div onClick={handleShowCart} className="cart-modal">
@@ -63,7 +58,7 @@ const Cart = () => {
 
         {cart.length > 0 && <div className="modal-footer">
           <button onClick={checkOut}>
-            <span>Checkout</span> <span>${Math.round(totalCost * 100) / 100}</span>{" "}
+            <span>Checkout</span> <span>${totalCost}</span>{" "}
           </button>
         </div>}
       </div>

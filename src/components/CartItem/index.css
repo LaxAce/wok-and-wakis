@@ -29,9 +29,8 @@
 
 .cart-item-page ul  {
     width: 35rem;
+    flex: 1;
     display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr;
-    gap: 0; */
 }
 
 .cart-item-page li,
@@ -41,11 +40,8 @@
 }
 
 @media screen and (max-width: 640px) {
-    /* .cart-item-page {
-        column-gap: 0;
-    }
     .cart-item-page ul  {
         width: 10%;
         flex: 1;
-    } */
+    } 
 }

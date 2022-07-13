@@ -12,15 +12,16 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
+  // Actions
   const handleShowCart = () => setShowCart(!showCart);
 
   const addToCart = (newItem) => {
     setCart((prevItem) => {
-      const existingItem = prevItem.find((item) => item.id == newItem.id);
+      const existingItem = prevItem.find((item) => item.id === newItem.id);
 
       if (existingItem) {
         const filterList = prevItem.filter(
-          (item) => item.id != existingItem.id
+          (item) => item.id !== existingItem.id
         );
         const updatePrevItems = [...filterList, newItem];
 
@@ -30,7 +31,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (id) => {
-    const currentItems = cart.filter((item) => item.id != id);
+    const currentItems = cart.filter((item) => item.id !== id);
     setCart(currentItems);
   };
 
@@ -39,6 +40,11 @@ export const CartProvider = ({ children }) => {
     handleShowCart();
   };
 
+  const totalCost =
+    Math.round(
+      cart.map((item) => item.cost)?.reduce((a, b) => a + b, 0) * 100
+    ) / 100;
+
   const contexts = {
     cart,
     addToCart,
@@ -46,6 +52,7 @@ export const CartProvider = ({ children }) => {
     handleShowCart,
     removeFromCart,
     checkOut,
+    totalCost,
   };
 
   return (

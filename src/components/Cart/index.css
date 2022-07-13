@@ -57,6 +57,7 @@ font-size: 2rem;
 
 .cart-modal .modal-body {
 padding: 10rem 2rem 3rem 2rem;
+min-height: 100%;
 }
 
 .cart-modal .order-note h2 {
@@ -104,10 +105,10 @@ padding: 10rem 2rem 3rem 2rem;
     justify-content: center;
     padding: 1.4rem 2.6rem 1.4rem 2.6rem; 
     position: -webkit-sticky;
-    position: fixed;
+    position: sticky;
     z-index: 4;
-    bottom: 16% ;
-    width: 55rem;
+    bottom: 0% ;
+    width: 100%;
     border-bottom-right-radius: 1.2rem;
     border-bottom-left-radius: 1.2rem;
     background-color: rgba(255, 255, 255, 0.898);
@@ -131,10 +132,6 @@ padding: 10rem 2rem 3rem 2rem;
     }
   
     .cart-modal .modal-header {
-      width: 90%;
-    }
-  
-    .cart-modal .modal-footer {
       width: 90%;
     }
 
